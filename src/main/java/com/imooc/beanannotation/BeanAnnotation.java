@@ -21,5 +21,4 @@ public class BeanAnnotation {
 	public void myHashCode() {
 		log.debug("BeanAnnotation : " + this.hashCode());
 	}
-
 }

@@ -21,11 +21,11 @@ public class MoocResource implements ApplicationContextAware {
 	}
 
 	public void resource() throws IOException {
-//		 Resource resource = applicationContext.getResource("config.txt");
+		 Resource resource = applicationContext.getResource("config.txt");
 //		Resource resource = applicationContext.getResource("classpath:config.txt");
 //		Resource resource = applicationContext.getResource("file:\\Users\\madison\\Documents\\workspace\\spring\\src\\main\\resources\\config.txt"); //读取不出来
 //		Resource resource = applicationContext.getResource("file:/Users/madison/Documents/workspace/spring/src/main/resources/config.txt");
-		Resource resource = applicationContext.getResource("url:https://www.baidu.com");
+//		Resource resource = applicationContext.getResource("url:https://www.baidu.com");
 		log.debug(resource.getFilename());
 		log.debug(resource.contentLength());
 	}
