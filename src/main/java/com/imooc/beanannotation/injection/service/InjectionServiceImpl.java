@@ -35,10 +35,7 @@ public class InjectionServiceImpl implements InjectionService {
 	
 
 	
-
-
-
-
+	@Override
 	public void save(String arg) {
 		//模拟业务操作
 		System.out.println("Service接收参数：" + arg);
