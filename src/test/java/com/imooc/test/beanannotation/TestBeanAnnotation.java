@@ -11,28 +11,25 @@ import org.junit.jupiter.api.Test;
 //@RunWith(BlockJUnit4ClassRunner.class)
 public class TestBeanAnnotation extends UnitTestBase {
 
-	public TestBeanAnnotation() {
-		super("classpath*:spring-beanannotation.xml");
-	}
+    public TestBeanAnnotation() {
+        super("classpath*:spring-beanannotation.xml");
+    }
 
-	@Test
-	public void testSay() {
-		BeanAnnotation bean = super.getBean("beanAnnotation");
-		bean.say("This is test.");
+    @Test
+    public void testSay() {
+//        BeanAnnotation bean = super.getBean("bean");
+        BeanAnnotation bean = super.getBean("beanAnnotation");
+        bean.say("This is test.");
 
-		
-//		BeanAnnotation bean = super.getBean("bean");
-//		bean.say("This is test.");
+    }
 
-	}
+    @Test
+    public void testScope() {
+        BeanAnnotation bean = super.getBean("beanAnnotation");
+        bean.myHashCode();
 
-	@Test
-	public void testScpoe() {
-		BeanAnnotation bean = super.getBean("beanAnnotation");
-		bean.myHashCode();
-
-		bean = super.getBean("beanAnnotation");
-		bean.myHashCode();
-	}
+        bean = super.getBean("beanAnnotation");
+        bean.myHashCode();
+    }
 
 }

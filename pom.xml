@@ -137,11 +137,11 @@
             <version>${aspectjrt.version}</version>
         </dependency>
 
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>${commons-logging.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>commons-logging</groupId>-->
+<!--            <artifactId>commons-logging</artifactId>-->
+<!--            <version>${commons-logging.version}</version>-->
+<!--        </dependency>-->
         <!--		<dependency>-->
         <!--			<groupId>log4j</groupId>-->
         <!--			<artifactId>log4j</artifactId>-->
@@ -168,7 +168,7 @@
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit-jupiter-api.version}</version>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
 
         <dependency>

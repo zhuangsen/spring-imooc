@@ -10,15 +10,14 @@ import org.junit.jupiter.api.Test;
 
 //@RunWith(BlockJUnit4ClassRunner.class)
 public class TestJsr extends UnitTestBase {
-	
-	public TestJsr() {
-		super("classpath*:spring-beanannotation.xml");
-	}
-	
-	@Test
-	public void testSave() {
-		JsrServie service = getBean("jsrServie");
-		service.save();
-	}
-	
+
+    public TestJsr() {
+        super("classpath*:spring-beanannotation.xml");
+    }
+
+    @Test
+    public void testSave() {
+        JsrServie service = getBean("jsrServie");
+        service.save();
+    }
 }

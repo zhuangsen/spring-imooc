@@ -1,10 +1,15 @@
 package com.imooc.ioc.interfaces;
 
-public class OneInterfaceImpl implements OneInterface {
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-	@Override
-	public void say(String arg) {
-		System.out.println("ServiceImpl say: " + arg);
-	}
+public class OneInterfaceImpl implements OneInterface {
+    private static Logger log = LogManager.getLogger();
+//	Log log = LogFactory.getLog(this.getClass());
+
+    @Override
+    public void say(String arg) {
+        log.info("=============ServiceImpl say: " + arg);
+    }
 
 }

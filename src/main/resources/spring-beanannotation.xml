@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:context="http://www.springframework.org/schema/context"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd" >
-        
-        <context:component-scan base-package="com.imooc.beanannotation"></context:component-scan>
-        
- </beans>
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 已包含 context:annotation-config-->
+    <context:component-scan base-package="com.imooc.beanannotation" use-default-filters="true">
+        <!-- 其中type有annotation，aspectj，assignable，custom，regex几种类型。-->
+        <!-- annotation：注解类型-->
+        <!-- assignable_type：annotation：指定的类型-->
+        <!-- aspectj：按照Aspectj的表达式，基本上不会用到-->
+        <!-- regex：按照正则表达式-->
+        <!-- custom：自定义规则-->
+
+        <!-- <context:include-filter type="" expression=""/>-->
+        <!-- <context:exclude-filter type="annotation" expression="aj"/>-->
+    </context:component-scan>
+</beans>

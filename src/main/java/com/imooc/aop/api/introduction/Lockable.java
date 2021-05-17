@@ -7,5 +7,4 @@ public interface Lockable {
 	void unlock();
 
 	boolean locked();
-
 }

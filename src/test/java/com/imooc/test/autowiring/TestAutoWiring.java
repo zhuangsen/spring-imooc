@@ -10,15 +10,14 @@ import org.junit.jupiter.api.Test;
 
 //@RunWith(BlockJUnit4ClassRunner.class)
 public class TestAutoWiring extends UnitTestBase {
-	
-	public TestAutoWiring() {
-		super("classpath:spring-autowiring.xml");
-	}
-	
-	@Test
-	public void testSay() {
-		AutoWiringService service = super.getBean("autoWiringService");
-		service.say(" this is a test");
-	}
 
+    public TestAutoWiring() {
+        super("classpath:spring-autowiring.xml");
+    }
+
+    @Test
+    public void testSay() {
+        AutoWiringService service = super.getBean("autoWiringService");
+        service.say(" this is a test");
+    }
 }

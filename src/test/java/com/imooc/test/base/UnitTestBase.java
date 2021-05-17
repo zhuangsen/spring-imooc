@@ -41,7 +41,6 @@ public class UnitTestBase {
 		context.close();
 	}
 
-	@SuppressWarnings("unchecked")
 	protected <T extends Object> T getBean(String beanId) {
 		try {
 			return (T) context.getBean(beanId);

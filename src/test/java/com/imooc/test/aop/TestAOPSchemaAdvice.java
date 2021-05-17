@@ -36,5 +36,4 @@ public class TestAOPSchemaAdvice extends UnitTestBase {
 		Fit fit = (Fit) super.getBean("aspectBiz");
 		fit.filter();
 	}
-
 }

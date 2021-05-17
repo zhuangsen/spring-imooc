@@ -3,7 +3,7 @@ package com.imooc.beanannotation.multibean;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Order(2)
+@Order(1)
 @Component
 public class BeanImplOne implements BeanInterface {
 
