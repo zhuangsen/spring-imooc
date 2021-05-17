@@ -1,7 +1,9 @@
 package com.imooc.test.base;
 
-import org.junit.After;
-import org.junit.Before;
+//import org.junit.After;
+//import org.junit.Before;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.BeansException;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.util.StringUtils;
@@ -19,9 +21,10 @@ public class UnitTestBase {
 		this.springXmlpath = springXmlpath;
 	}
 
-	@Before
+	@BeforeEach
 	public void before() {
-		if (StringUtils.isEmpty(springXmlpath)) {
+		if (!StringUtils.hasLength(springXmlpath)) {
+//		if (StringUtils.isEmpty(springXmlpath)) {
 			springXmlpath = "classpath*:spring-*.xml";
 		}
 		try {
@@ -32,9 +35,10 @@ public class UnitTestBase {
 		}
 	}
 
-	@After
+	@AfterEach
 	public void after() {
-		context.destroy();
+//		context.destroy();
+		context.close();
 	}
 
 	@SuppressWarnings("unchecked")

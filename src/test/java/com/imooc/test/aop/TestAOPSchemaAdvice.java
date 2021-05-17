@@ -1,14 +1,15 @@
 package com.imooc.test.aop;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.junit.runners.BlockJUnit4ClassRunner;
 
 import com.imooc.aop.schema.advice.Fit;
 import com.imooc.aop.schema.advice.biz.AspectBiz;
 import com.imooc.test.base.UnitTestBase;
+import org.junit.jupiter.api.Test;
 
-@RunWith(BlockJUnit4ClassRunner.class)
+//@RunWith(BlockJUnit4ClassRunner.class)
 public class TestAOPSchemaAdvice extends UnitTestBase {
 
 	public TestAOPSchemaAdvice() {

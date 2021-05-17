@@ -1,15 +1,16 @@
 package com.imooc.test.beanannotation;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.junit.runners.BlockJUnit4ClassRunner;
 
 import com.imooc.beanannotation.javabased.MyDriverManager;
 import com.imooc.beanannotation.javabased.Store;
 import com.imooc.beanannotation.javabased.StringStore;
 import com.imooc.test.base.UnitTestBase;
+import org.junit.jupiter.api.Test;
 
-@RunWith(BlockJUnit4ClassRunner.class)
+//@RunWith(BlockJUnit4ClassRunner.class)
 public class TestJavabased extends UnitTestBase {
 
 	public TestJavabased() {

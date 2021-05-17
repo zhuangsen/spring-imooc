@@ -1,13 +1,14 @@
 package com.imooc.test.bean;
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.BlockJUnit4ClassRunner;
+//import org.junit.Test;
+//import org.junit.runner.RunWith;
+//import org.junit.runners.BlockJUnit4ClassRunner;
 
 import com.imooc.bean.BeanScope;
 import com.imooc.test.base.UnitTestBase;
+import org.junit.jupiter.api.Test;
 
-@RunWith(BlockJUnit4ClassRunner.class)
+//@RunWith(BlockJUnit4ClassRunner.class)
 public class TestBeanScope extends UnitTestBase {
 
 	public TestBeanScope() {
