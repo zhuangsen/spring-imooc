@@ -1,5 +1,7 @@
 package com.imooc.aop.aspectj;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -13,58 +15,68 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class MoocAspect {
-	
-	@Pointcut("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..)) && @annotation(moocMethod)")
-	public void pointcut(MoocMethod moocMethod) {}
-	
-	@Pointcut("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..))")
-	public void pointcut() {}
-	
-	@Pointcut("within(com.imooc.aop.aspectj.biz.*)")
-	public void bizPointcut() {}
-	
-	@Before("pointcut()")
-	public void before() {
-		System.out.println("Before.");
-	}
-	
-	@Before("pointcut() && args(arg)")
-	public void beforeWithParam(String arg) {
-		System.out.println("BeforeWithParam." + arg);
-	}
-	
-/*	@Before("pointcut() && @annotation(moocMethod)")
-	public void beforeWithAnnotaion(MoocMethod moocMethod) {
-		System.out.println("BeforeWithAnnotation." + moocMethod.value());
-	}*/
-	
-	@Before("pointcut(moocMethod)")
-	public void beforeWithAnnotaion(MoocMethod moocMethod) {
-		System.out.println("BeforeWithAnnotation." + moocMethod.value());
-	}
-	
-	@AfterReturning(pointcut="bizPointcut()", returning="returnValue")
-	public void afterReturning(Object returnValue) {
-		System.out.println("AfterReturning : " + returnValue);
-	}
-	
-	@AfterThrowing(pointcut="pointcut()", throwing="e")
-	public void afterThrowing(RuntimeException e) {
-		System.out.println("AfterThrowing : " + e.getMessage());
-	}
-	
-	@After("pointcut()")
-	public void after() {
-		System.out.println("After.");
-	}
+    private static Logger log = LogManager.getLogger();
+    //	Log log = LogFactory.getLog(this.getClass());
 
-	@Around("pointcut()")
-	public Object around(ProceedingJoinPoint pjp) throws Throwable {
-		System.out.println("Around 1.");
-		Object obj = pjp.proceed();
-		System.out.println("Around 2.");
-		System.out.println("Around : " + obj);
-		return obj;
-	}
-	
+    // execution 匹配方法执行的连接点
+    @Pointcut("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..))")
+    public void pointcut() {
+        // 切入点不会打印
+        log.info("------------------pointcut.------------------");
+    }
+
+    @Pointcut("within(com.imooc.aop.aspectj.biz.*)")
+    public void bizPointcut() {
+        // 切入点不会打印
+        log.info("------------------bizPointcut.------------------");
+    }
+
+//    @Pointcut("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..)) && @annotation(moocMethod)")
+//    public void pointcut(MoocMethod moocMethod) {
+//    }
+
+    @Before("pointcut()")
+    // @Before("execution(* com.imooc.aop.aspectj.biz.*Biz.*(..))")
+    public void before() {
+        log.info("------------------Before.------------------");
+    }
+
+    @Before("pointcut() && args(arg)")
+    public void beforeWithParam(String arg) {
+        log.info("------------------BeforeWithParam: {}------------------", arg);
+    }
+
+    @Before("pointcut() && @annotation(moocMethod)")
+    public void beforeWithAnnotation(MoocMethod moocMethod) {
+        log.info("------------------BeforeWithAnnotation: {}------------------", moocMethod.value());
+    }
+
+//    @Before("pointcut(moocMethod)")
+//    public void beforeWithAnnotation1(MoocMethod moocMethod) {
+//        log.info("------------------BeforeWithAnnotation: {}------------------", moocMethod.value());
+//    }
+
+    @AfterReturning(pointcut = "bizPointcut()", returning = "returnValue")
+    public void afterReturning(Object returnValue) {
+        log.info("------------------AfterReturning : {}------------------", returnValue);
+    }
+
+    @AfterThrowing(pointcut = "pointcut()", throwing = "e")
+    public void afterThrowing(RuntimeException e) {
+        log.info("------------------AfterThrowing : {}------------------", e.getMessage());
+    }
+
+    @After("pointcut()")
+    public void after() {
+        log.info("------------------After.------------------");
+    }
+
+    @Around("pointcut()")
+    public Object around(ProceedingJoinPoint pjp) throws Throwable {
+        log.info("------------------Around 1.------------------");
+        Object obj = pjp.proceed();
+        log.info("------------------Around 2.------------------");
+        log.info("------------------Around: {}------------------", obj);
+        return obj;
+    }
 }

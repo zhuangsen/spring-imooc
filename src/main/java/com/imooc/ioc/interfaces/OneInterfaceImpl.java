@@ -5,11 +5,11 @@ import org.apache.logging.log4j.Logger;
 
 public class OneInterfaceImpl implements OneInterface {
     private static Logger log = LogManager.getLogger();
-//	Log log = LogFactory.getLog(this.getClass());
+    //	Log log = LogFactory.getLog(this.getClass());
 
     @Override
     public void say(String arg) {
-        log.info("=============ServiceImpl say: " + arg);
+        log.info("=============ServiceImpl say: {}", arg);
     }
 
 }

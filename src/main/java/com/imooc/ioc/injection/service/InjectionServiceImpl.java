@@ -9,7 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 public class InjectionServiceImpl implements InjectionService {
     private static Logger log = LogManager.getLogger();
-//	Log log = LogFactory.getLog(this.getClass());
+    //	Log log = LogFactory.getLog(this.getClass());
 
     private InjectionDAO injectionDAO;
 
@@ -33,9 +33,8 @@ public class InjectionServiceImpl implements InjectionService {
     @Override
     public void save(String arg) {
         //模拟业务操作
-        log.info("=============Service接收参数：" + arg);
+        log.info("=============Service接收参数：{}", arg);
         arg = arg + ":" + this.hashCode();
         injectionDAO.save(arg);
     }
-
 }

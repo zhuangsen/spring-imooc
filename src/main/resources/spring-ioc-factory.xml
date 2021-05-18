@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    1.通过静态工厂方法配置bean -->
+    <!--    Static Factory method：-->
+    <!--    class: the class of Factory-->
+    <!--    factory-method: method of get Bean Object-->
+    <!--    constructor-arg: parameters of factory-method-->
+    <!--    可以见到， 利用静态工厂方法定义的bean item种， class属性不在是bean的全类名， 而是静态工厂的全类名，
+            而且还需要指定工厂里的getBean 静态方法名字和参数 -->
+    <bean id="person1" class="com.imooc.ioc.factory.StaticFactory" factory-method="getPerson">
+        <constructor-arg value="tom"></constructor-arg>
+    </bean>
+
+    <!--    2.通过实例工厂方法配置bean -->
+    <bean id="instanceFactory" class="com.imooc.ioc.factory.InstanceFactory"/>
+    <bean id="person2" factory-bean="instanceFactory" factory-method="getPerson">
+        <constructor-arg value="xixi"></constructor-arg>
+    </bean>
+
+    <!--    3.FactoryBean:通过factorybean 配置 bean的实例。property配置factorybean的属性值-->
+    <bean id="person3" class="com.imooc.ioc.factory.PersonFactoryBean">
+        <property name="personName" value="madison"></property>
+    </bean>
+</beans>
