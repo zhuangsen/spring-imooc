@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zs.spring</groupId>
-    <artifactId>spring</artifactId>
+    <artifactId>spring-imooc</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
@@ -127,7 +127,7 @@
             <version>${spring.version}</version>
         </dependency>
 
-        <!-- Spring AOP已经集成了AspectJ，AspectJ应该算得上是Java生态系统中最完整的AOP框架了。
+        <!-- spring-aspects已经集成了AspectJ，AspectJ应该算得上是Java生态系统中最完整的AOP框架了。
                 AspectJ相比于Spring AOP功能更加强大，但是Spring AOP相对来说更简单。 -->
         <!--        <dependency>-->
         <!--            <groupId>aopalliance</groupId>-->
