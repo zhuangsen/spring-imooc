@@ -13,7 +13,7 @@ public class InstanceFactory {
     private Map<String, Person> persons;
 
     public InstanceFactory() {
-        persons = new HashMap<String, Person>();
+        persons = new HashMap();
         persons.put("haha", new Person("haha", 18));
         persons.put("xixi", new Person("xixi", 18));
     }
